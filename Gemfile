@@ -60,7 +60,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # bootstrap
 gem 'bootstrap', '~> 4.4.1'
 
+# jquery
+gem 'jquery-rails'
+
+# pooper
+gem 'popper_js', '~> 1.14.5'
 
 # devise
 
 gem 'devise'
+
+# crriarwave
+gem 'carrierwave', '~> 2.0'

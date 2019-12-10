@@ -20,6 +20,27 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+                <li class="nav-item">
+                   <%= link_to current_user.name.capitalize,'', class: 'btn', disables: true %> 
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-info border border-light' %>
+                </li>
+
+            <% else %>
+                <li class="nav-item mr-1">
+                    <%= link_to 'Login', new_user_session_path, class: 'btn btn-success border border-light' %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary border border-light' %>
+                </li>
+            <% end %>
+        </ul>
     </div>
     
     </div>

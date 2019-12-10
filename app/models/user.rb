@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  mount_uploader :image, ProfileImageUploader
+
   validates :name, presence: true
 
   # Include default devise modules. Others available are:
