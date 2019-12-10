@@ -1,0 +1,41 @@
+<%= form_with model: product, local: true do |f| %>
+
+    <div class="form-group">
+
+        <p class="text-right"> <%= f.label :name, 'اسم المنتج' %> </p>
+        <%= f.text_field :name, class: 'form-control', autofocus: true, placeholder: 'اسم المنتج .....' %>
+    
+    </div>
+
+    <div class="form-group">
+
+        <p class="text-right"> <%= f.label :description, 'وصف المنتج (اختياري)' %> </p>
+        <%= f.text_area :description, class: 'form-control', placeholder: 'وصف المنتج .....' %>
+    
+    </div>
+
+    <div class="form-group">
+
+        <p class="text-right"> <%= f.label :price, 'سعر المنتج' %> </p>
+        <%= f.text_field :price, class: 'form-control', placeholder: '10.00' %>
+    
+    </div>
+
+    <div class="form-group">
+
+        <p class="text-right"> <%= f.label :image, 'صوره المنتج (اختياري)' %> </p>
+        <%= f.file_field :image, class: 'form-control'%>
+        <p class="text-right mt-1">
+            <% if not @product.image.medium.url.nil? %>
+            الصوره الحاليه
+            <br>
+            <%= image_tag product.image.medium.url, class: 'img-thumbnail rounded' %>
+            <% end %>
+        </p>
+    </div>
+
+    <p class="text-right">
+        <%= f.submit action, class: 'btn btn-success' %>
+    </p>
+
+<% end %>

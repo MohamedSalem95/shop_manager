@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  has_many :products
+
   mount_uploader :image, ProfileImageUploader
 
   validates :name, presence: true

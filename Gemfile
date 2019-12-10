@@ -63,8 +63,11 @@ gem 'bootstrap', '~> 4.4.1'
 # jquery
 gem 'jquery-rails'
 
-# pooper
+# popper
 gem 'popper_js', '~> 1.14.5'
+
+# sprockets-rails
+gem 'sprockets-rails', '~> 2.3.2'
 
 # devise
 

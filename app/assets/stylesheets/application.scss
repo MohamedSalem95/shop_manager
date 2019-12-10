@@ -1,1 +1,7 @@
-@import 'bootstrap'
+@import 'bootstrap';
+@import './products';
+
+
+body, html {
+    font-family: 'Lato';
+}

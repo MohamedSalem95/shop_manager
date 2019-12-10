@@ -1,4 +1,4 @@
-class ProfileImageUploader < CarrierWave::Uploader::Base
+class ProductImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -33,17 +33,12 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-
-  version :thumb do
-    process resize_to_fill: [50, 50]
-  end
-
   version :small do
-    process resize_to_fill: [150, 150]
+    process resize_to_fit: [160, 160]
   end
 
-  version :mediam do
-    process resize_to_fill: [300, 300]
+  version :medium do
+    process resize_to_fit: [300, 300]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
