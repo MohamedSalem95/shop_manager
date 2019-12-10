@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
 
-  resources :items
-  resources :orders
+  
+  resources :orders do
+    resources :items
+  end
+
+  
   resources :products
   devise_for :users
   root to: 'pages#home', as: 'home'

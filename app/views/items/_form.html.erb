@@ -1,0 +1,19 @@
+<%= form_with model: [order, item], local: true do |f| %>
+
+    <div class="row">
+        <div class="col-md-4 text-right">
+            <div class="form-group">
+                <%= f.select 'product', options_from_collection_for_select(products, 'id', 'name'), class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-md-4"> 
+            <div class="form-group">
+                <%= f.number_field :quantity, placeholder: 'الكميه', class: 'form-control' %>
+            </div>
+        </div>
+        <div class="col-md-4 text-right">
+            <%= f.submit 'اضافه اللي الاوردر', class: 'btn btn-success' %>
+        </div>
+    </div>
+
+<% end %>

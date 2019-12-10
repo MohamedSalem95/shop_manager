@@ -1,11 +1,20 @@
 <div class="row">
 
     <div class="col">
+        <h4 class="text-right"> <%= @order.name %> </h4>
         <p class="text-right">
             تم انشائه بواسطه <%= link_to @order.user.name, profile_path(@order.user) %>
             <%= time_ago_in_words(@order.created_at) %> ago
              
             
         </p>
+        <hr>
+        <h5 class="text-right">
+            اضف عناصر الي هذا الاوردر
+        </h5>
+
+        <%= render partial: 'items/form', locals: {order: @order, item: Item.new, products: Product.all} %>
+        <hr>
+        <%= render partial: 'items/item_list', locals: {items: @order.items} %>
     </div>
 </div>

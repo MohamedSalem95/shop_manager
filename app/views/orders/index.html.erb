@@ -1,11 +1,12 @@
-<% if not @orders.empty? %>
+<% if @orders.any? %>
 
-    <table class="table">
+<table class="table table-hover">
         <thead>
             <tr>
                 <th> اسم الاوردر </th>
                 <th> بواسطه </th>
                 <th> تم انشائه </th>
+                <th>  </th>
                 <th>  </th>
 
             </tr>
@@ -18,7 +19,8 @@
                     <td> <%= order.name %> </td>
                     <td> <%= link_to order.user.name, profile_path(order.user) %> </td>
                     <td> <%= time_ago_in_words(order.created_at) %> </td>
-                    <td> <%= link_to 'خذف', order_path(order), method: :delete, data: {confirm: 'هل انت متاكد؟'}, class: 'btn btn-ouline-danger btn-sm' %> </td>
+                    <td> <%= link_to 'حذف', order_path(order), method: :delete, data: {confirm: 'هل انت متاكد؟'}, class: 'btn btn-outline-danger btn-sm' %> </td>
+                     <td> <%= link_to 'عرض', order_path(order), class: 'btn btn-outline-primary btn-sm' %> </td>
                 </tr>
             <% end %>
 
@@ -26,5 +28,10 @@
 
     </table>
 
+<% else %>
+
+    <p class="text-right">
+        انت لم تقم باضافه اي طلب بعد يمكنك اضافه طلب من  <%= link_to 'هنا', new_order_path %>
+    </p>
 
 <% end %>
