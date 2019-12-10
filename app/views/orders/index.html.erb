@@ -1,0 +1,30 @@
+<% if not @orders.empty? %>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> اسم الاوردر </th>
+                <th> بواسطه </th>
+                <th> تم انشائه </th>
+                <th>  </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <%= @orders.each do |order| %>
+                <tr>
+                    <td> <%= order.name %> </td>
+                    <td> <%= link_to order.user.name, profile_path(order.user) %> </td>
+                    <td> <%= time_ago_in_words(order.created_at) %> </td>
+                    <td> <%= link_to 'خذف', order_path(order), method: :delete, data: {confirm: 'هل انت متاكد؟'}, class: 'btn btn-ouline-danger btn-sm' %> </td>
+                </tr>
+            <% end %>
+
+        </tbody>
+
+    </table>
+
+
+<% end %>

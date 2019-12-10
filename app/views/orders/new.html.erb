@@ -1,0 +1,22 @@
+
+
+
+    <%= form_with model: @order, local: true do |f| %>
+        <div class="row">
+            <div class="col">
+                <p class="text-right"><%= f.label :name, 'اسم الاوردر' %></p>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-11">
+                <div class="form-group">
+                
+                    <%= f.text_field :name, class: 'form-control', placeholder: 'اسم الاوردر' %>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <%= f.submit 'اضافه', class: 'btn btn-success' %>
+            </div>
+        </div>
+    <% end %>
