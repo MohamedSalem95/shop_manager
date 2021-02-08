@@ -74,4 +74,4 @@ gem 'sprockets-rails', '~> 2.3.2'
 gem 'devise'
 
 # crriarwave
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
